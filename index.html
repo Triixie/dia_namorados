@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>🖤 Amor Eterno 🖤</title>
+<title>🥀 Feliz Dia dos Namorados 🥀</title>
 
 <style>
 
@@ -15,34 +15,35 @@ box-sizing:border-box;
 }
 
 body{
-background:
-linear-gradient(to bottom,
+background:linear-gradient(
+180deg,
 #000000,
-#120000,
-#000000);
+#140000,
+#000000
+);
 
-color:#e5e5e5;
 font-family:Georgia, serif;
+color:#e5e5e5;
 text-align:center;
 overflow-x:hidden;
 min-height:100vh;
 }
 
 .container{
-padding:40px 20px;
+padding:30px 20px;
 }
 
 h1{
-font-size:2.5rem;
+font-size:2.8rem;
 margin-top:20px;
 color:#b3002d;
 text-shadow:0 0 15px #600;
 }
 
 .subtitulo{
-margin-top:10px;
+margin-top:15px;
 font-style:italic;
-color:#999;
+color:#b0b0b0;
 }
 
 .foto{
@@ -51,7 +52,7 @@ max-width:90%;
 margin-top:30px;
 border-radius:12px;
 border:2px solid #550000;
-box-shadow:0 0 25px rgba(150,0,0,.5);
+box-shadow:0 0 25px rgba(180,0,0,.4);
 }
 
 .contador{
@@ -59,43 +60,40 @@ margin-top:25px;
 font-size:1.2rem;
 }
 
-.botao{
-margin-top:25px;
-padding:15px 25px;
-background:#111;
-color:#c00030;
-border:1px solid #660000;
-border-radius:5px;
-font-size:1rem;
-cursor:pointer;
+.musica{
+margin-top:30px;
 }
 
-.botao:hover{
-background:#1f1f1f;
+.video-container{
+margin-top:40px;
 }
 
-.carta{
-display:none;
+video{
+width:90%;
 max-width:700px;
-margin:40px auto;
-padding:25px;
-background:rgba(20,20,20,.9);
-border:1px solid #550000;
-border-radius:10px;
-line-height:1.9;
+border:2px solid #550000;
+border-radius:12px;
+box-shadow:0 0 20px rgba(180,0,0,.3);
 }
 
 .flutuante{
 position:fixed;
 top:-20px;
-animation:cair linear forwards;
 pointer-events:none;
+animation:cair linear forwards;
 }
 
 @keyframes cair{
 to{
 transform:translateY(110vh);
 }
+}
+
+footer{
+margin-top:50px;
+margin-bottom:30px;
+color:#888;
+font-size:.9rem;
 }
 
 </style>
@@ -105,95 +103,85 @@ transform:translateY(110vh);
 
 <div class="container">
 
-<h1>🖤 Amor Eterno 🖤</h1>
+<h1>🥀 Feliz Dia dos Namorados 🥀</h1>
 
 <p class="subtitulo">
-"Em qualquer universo, eu escolheria você."
+Em qualquer universo, eu escolheria você.
 </p>
 
-<img src="foto.jpg" class="foto">
+<img src="foto.jpg" class="foto" alt="Nossa foto">
 
 <div class="contador">
-🥀 Juntos há <span id="dias"></span> dias 🥀
+🖤 Juntos há <span id="dias"></span> dias 🖤
 </div>
 
-<button class="botao" onclick="abrirCarta()">
-🖤 Abrir Carta
-</button>
+<div class="musica">
+<h3>🎵 Nossa Música</h3>
+<br>
 
-<div class="carta" id="carta">
+<audio controls>
+<source src="musica.mp3" type="audio/mpeg">
+Seu navegador não suporta áudio.
+</audio>
 
-<h2>Para você 🖤</h2>
+</div>
+
+<div class="video-container">
+
+<h3>🎥 Nossa História</h3>
 
 <br>
 
-<p>
-
-Entre todas as pessoas que já passaram pela minha vida,
-você foi quem ficou.
-
-Foi quem transformou dias comuns em lembranças especiais.
-
-Quem me fez perceber que amor não é apenas felicidade,
-mas também parceria, confiança e presença.
-
-Se eu pudesse voltar no tempo,
-escolheria você novamente.
-
-E novamente.
-
-E novamente.
-
-Porque entre todas as possibilidades,
-você continua sendo a minha favorita.
-
-🖤🥀
-
-</p>
+<video controls>
+<source src="video.mp4" type="video/mp4">
+Seu navegador não suporta vídeo.
+</video>
 
 </div>
+
+<footer>
+🖤 Feito com amor 🖤
+</footer>
 
 </div>
 
 <script>
 
-const inicio = new Date("2021-10-23");
+// TROQUE PELA DATA REAL
+const inicio = new Date("2024-01-01");
 
 const hoje = new Date();
 
 const dias = Math.floor(
 (hoje - inicio) /
-(1000*60*60*24)
+(1000 * 60 * 60 * 24)
 );
 
 document.getElementById("dias").innerText = dias;
 
-function abrirCarta(){
-document.getElementById("carta").style.display="block";
-}
-
 function criarElemento(){
 
-const simbolos=[
+const simbolos = [
 "🖤",
 "🥀",
 "🌹"
 ];
 
-const el=document.createElement("div");
+const el = document.createElement("div");
 
-el.className="flutuante";
+el.className = "flutuante";
 
-el.innerHTML=
+el.innerHTML =
 simbolos[Math.floor(Math.random()*simbolos.length)];
 
-el.style.left=Math.random()*100+"vw";
+el.style.left =
+Math.random()*100 + "vw";
 
-el.style.fontSize=
-(20+Math.random()*20)+"px";
+el.style.fontSize =
+(20 + Math.random()*20) + "px";
 
-el.style.animationDuration=
-(5+Math.random()*4)+"s";
+el.style.animationDuration =
+(5 + Math.random()*4) + "s";
 
 document.body.appendChild(el);
 
