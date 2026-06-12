@@ -15,7 +15,8 @@ box-sizing:border-box;
 }
 
 body{
-background:linear-gradient(
+background:
+linear-gradient(
 180deg,
 #000000,
 #140000,
@@ -23,62 +24,65 @@ background:linear-gradient(
 );
 
 font-family:Georgia, serif;
-color:#e5e5e5;
+color:#e8e8e8;
 text-align:center;
 overflow-x:hidden;
 min-height:100vh;
 }
 
 .container{
-padding:30px 20px;
+max-width:900px;
+margin:auto;
+padding:40px 20px;
 }
 
 h1{
-font-size:2.8rem;
-margin-top:20px;
+font-size:3rem;
 color:#b3002d;
 text-shadow:0 0 15px #600;
+margin-bottom:10px;
 }
 
 .subtitulo{
-margin-top:15px;
 font-style:italic;
-color:#b0b0b0;
+color:#999;
+margin-bottom:30px;
 }
 
 .foto{
-width:300px;
+width:320px;
 max-width:90%;
-margin-top:30px;
 border-radius:12px;
 border:2px solid #550000;
 box-shadow:0 0 25px rgba(180,0,0,.4);
+margin-bottom:25px;
 }
 
 .contador{
-margin-top:25px;
-font-size:1.2rem;
+font-size:1.3rem;
+margin-bottom:40px;
 }
 
-.musica{
-margin-top:30px;
-}
-
-.video-container{
-margin-top:40px;
-}
-
-video{
-width:90%;
-max-width:700px;
-border:2px solid #550000;
+.carta{
+background:rgba(15,15,15,.9);
+border:1px solid #550000;
 border-radius:12px;
-box-shadow:0 0 20px rgba(180,0,0,.3);
+padding:30px;
+line-height:2;
+font-size:1.1rem;
+text-align:left;
+box-shadow:0 0 20px rgba(180,0,0,.2);
+}
+
+.carta h2{
+text-align:center;
+margin-bottom:20px;
+color:#c00030;
 }
 
 .flutuante{
 position:fixed;
-top:-20px;
+top:-30px;
 pointer-events:none;
 animation:cair linear forwards;
 }
@@ -90,16 +94,18 @@ transform:translateY(110vh);
 }
 
 footer{
-margin-top:50px;
-margin-bottom:30px;
-color:#888;
-font-size:.9rem;
+margin:40px 0;
+color:#777;
 }
 
 </style>
 </head>
 
 <body>
+
+<audio id="musica" autoplay loop>
+<source src="musica.mp3" type="audio/mpeg">
+</audio>
 
 <div class="container">
 
@@ -115,50 +121,74 @@ Em qualquer universo, eu escolheria você.
 🖤 Juntos há <span id="dias"></span> dias 🖤
 </div>
 
-<div class="musica">
-<h3>🎵 Nossa Música</h3>
-<br>
+<div class="carta">
 
-<audio controls>
-<source src="musica.mp3" type="audio/mpeg">
-Seu navegador não suporta áudio.
-</audio>
+<h2>Para o Amor da Minha Vida 🖤</h2>
 
-</div>
+<p>
 
-<div class="video-container">
+Entre todas as coincidências da vida,
+a minha favorita foi encontrar você.
 
-<h3>🎥 Nossa História</h3>
+Você transformou dias comuns em lembranças especiais,
+silêncios em conforto,
+e momentos simples em algo que eu nunca quero esquecer.
 
-<br>
+Talvez eu não consiga colocar em palavras tudo o que sinto,
+mas espero que você saiba que cada sorriso seu ilumina um pedaço do meu mundo.
 
-<video controls>
-<source src="video.mp4" type="video/mp4">
-Seu navegador não suporta vídeo.
-</video>
+Obrigado por cada conversa,
+cada abraço,
+cada risada,
+cada momento em que você escolheu permanecer.
+
+Se eu pudesse voltar ao início,
+escolheria você novamente.
+
+E novamente.
+
+E novamente.
+
+Porque entre todas as possibilidades,
+você continua sendo a minha favorita.
+
+Feliz Dia dos Namorados.
+
+🖤🥀
+
+</p>
 
 </div>
 
 <footer>
-🖤 Feito com amor 🖤
+🖤 Feito especialmente para você 🖤
 </footer>
 
 </div>
 
 <script>
 
-// TROQUE PELA DATA REAL
-const inicio = new Date("2024-01-01");
+// DATA DO NAMORO
+const inicio = new Date("2021-10-23");
 
 const hoje = new Date();
 
 const dias = Math.floor(
 (hoje - inicio) /
-(1000 * 60 * 60 * 24)
+(1000*60*60*24)
 );
 
 document.getElementById("dias").innerText = dias;
 
+
+// TENTA INICIAR A MÚSICA AUTOMATICAMENTE
+document.addEventListener("click", () => {
+const audio = document.getElementById("musica");
+audio.play();
+},{ once:true });
+
+
+// ELEMENTOS FLUTUANTES
 function criarElemento(){
 
 const simbolos = [
@@ -181,13 +211,13 @@ el.style.fontSize =
 (20 + Math.random()*20) + "px";
 
 el.style.animationDuration =
-(5 + Math.random()*4) + "s";
+(5 + Math.random()*5) + "s";
 
 document.body.appendChild(el);
 
 setTimeout(()=>{
 el.remove();
-},9000);
+},10000);
 
 }
 
