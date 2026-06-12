@@ -15,69 +15,121 @@ box-sizing:border-box;
 }
 
 body{
-background:
-linear-gradient(
-180deg,
-#000000,
-#140000,
-#000000
-);
-
-font-family:Georgia, serif;
-color:#e8e8e8;
-text-align:center;
-overflow-x:hidden;
+background:linear-gradient(180deg,#000,#150000,#000);
+font-family:Georgia,serif;
+color:white;
 min-height:100vh;
+overflow:hidden;
 }
 
 .container{
-max-width:900px;
-margin:auto;
-padding:40px 20px;
+height:100vh;
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
+padding:20px;
 }
 
 h1{
-font-size:3rem;
 color:#b3002d;
-text-shadow:0 0 15px #600;
+font-size:2.2rem;
 margin-bottom:10px;
+text-shadow:0 0 15px #600;
 }
 
-.subtitulo{
+.frase{
+color:#cfcfcf;
 font-style:italic;
-color:#999;
-margin-bottom:30px;
+margin-bottom:20px;
+text-align:center;
 }
 
-.foto{
-width:320px;
-max-width:90%;
-border-radius:12px;
-border:2px solid #550000;
-box-shadow:0 0 25px rgba(180,0,0,.4);
-margin-bottom:25px;
+.barras{
+display:flex;
+gap:4px;
+width:min(90vw,650px);
+margin-bottom:15px;
 }
 
-.contador{
-font-size:1.3rem;
-margin-bottom:40px;
+.barra{
+flex:1;
+height:4px;
+background:rgba(255,255,255,.15);
+border-radius:99px;
+}
+
+.barra.ativa{
+background:#b3002d;
+}
+
+.moldura{
+width:min(90vw,650px);
+height:min(65vh,700px);
+background:#0b0b0b;
+border:2px solid #5a0017;
+border-radius:18px;
+box-shadow:
+0 0 25px rgba(179,0,45,.3),
+inset 0 0 25px rgba(179,0,45,.15);
+display:flex;
+justify-content:center;
+align-items:center;
+overflow:hidden;
+position:relative;
+}
+
+.slide{
+display:none;
+width:100%;
+height:100%;
+}
+
+.slide.ativo{
+display:flex;
+justify-content:center;
+align-items:center;
+}
+
+.slide img{
+width:100%;
+height:100%;
+object-fit:contain;
+background:black;
 }
 
 .carta{
-background:rgba(15,15,15,.9);
-border:1px solid #550000;
-border-radius:12px;
-padding:30px;
-line-height:2;
-font-size:1.1rem;
-text-align:left;
-box-shadow:0 0 20px rgba(180,0,0,.2);
+padding:35px;
+line-height:1.9;
+text-align:center;
+overflow:auto;
 }
 
 .carta h2{
-text-align:center;
 margin-bottom:20px;
-color:#c00030;
+color:#b3002d;
+}
+
+.nav{
+position:absolute;
+top:0;
+height:100%;
+width:50%;
+z-index:20;
+}
+
+.esquerda{
+left:0;
+}
+
+.direita{
+right:0;
+}
+
+.indicacao{
+margin-top:15px;
+font-size:.9rem;
+color:#888;
 }
 
 .flutuante{
@@ -93,11 +145,6 @@ transform:translateY(110vh);
 }
 }
 
-footer{
-margin:40px 0;
-color:#777;
-}
-
 </style>
 </head>
 
@@ -111,107 +158,118 @@ color:#777;
 
 <h1>🥀 Feliz Dia dos Namorados 🥀</h1>
 
-<p class="subtitulo">
-Em qualquer universo, eu escolheria você.
-</p>
-
-<img src="foto.jpg" class="foto" alt="Nossa foto">
-
-<div class="contador">
-🖤 Juntos há <span id="dias"></span> dias 🖤
+<div class="frase">
+Amo dividir minha vida com você 🖤
 </div>
 
+<div class="barras">
+<div class="barra ativa"></div>
+<div class="barra"></div>
+<div class="barra"></div>
+<div class="barra"></div>
+<div class="barra"></div>
+<div class="barra"></div>
+<div class="barra"></div>
+<div class="barra"></div>
+<div class="barra"></div>
+<div class="barra"></div>
+</div>
+
+<div class="moldura">
+
+<div class="slide ativo"><img src="foto1.jpg"></div>
+<div class="slide"><img src="foto2.jpg"></div>
+<div class="slide"><img src="foto3.jpg"></div>
+<div class="slide"><img src="foto4.jpg"></div>
+<div class="slide"><img src="foto5.jpg"></div>
+<div class="slide"><img src="foto6.jpg"></div>
+<div class="slide"><img src="foto7.jpg"></div>
+<div class="slide"><img src="foto8.jpg"></div>
+<div class="slide"><img src="foto9.jpg"></div>
+
+<div class="slide">
 <div class="carta">
 
-<h2>Para o Amor da Minha Vida 🖤</h2>
+<h2>🖤 Para Você 🖤</h2>
 
 <p>
+Escreva aqui sua mensagem.
 
-Entre todas as coincidências da vida,
-a minha favorita foi encontrar você.
+Você pode editar este texto quando quiser,
+diretamente no GitHub.
 
-Você transformou dias comuns em lembranças especiais,
-silêncios em conforto,
-e momentos simples em algo que eu nunca quero esquecer.
+Este espaço foi reservado para a sua carta.
 
-Talvez eu não consiga colocar em palavras tudo o que sinto,
-mas espero que você saiba que cada sorriso seu ilumina um pedaço do meu mundo.
-
-Obrigado por cada conversa,
-cada abraço,
-cada risada,
-cada momento em que você escolheu permanecer.
-
-Se eu pudesse voltar ao início,
-escolheria você novamente.
-
-E novamente.
-
-E novamente.
-
-Porque entre todas as possibilidades,
-você continua sendo a minha favorita.
-
-Feliz Dia dos Namorados.
-
-🖤🥀
-
+🥀🖤
 </p>
 
 </div>
+</div>
 
-<footer>
-🖤 Feito especialmente para você 🖤
-</footer>
+<div class="nav esquerda" onclick="anterior()"></div>
+<div class="nav direita" onclick="proximo()"></div>
+
+</div>
+
+<div class="indicacao">
+Toque na direita para avançar • Toque na esquerda para voltar
+</div>
 
 </div>
 
 <script>
 
-// DATA DO NAMORO
-const inicio = new Date("2021-10-23");
+const slides=document.querySelectorAll(".slide");
+const barras=document.querySelectorAll(".barra");
 
-const hoje = new Date();
+let atual=0;
 
-const dias = Math.floor(
-(hoje - inicio) /
-(1000*60*60*24)
-);
+function atualizar(){
 
-document.getElementById("dias").innerText = dias;
+slides.forEach(s=>s.classList.remove("ativo"));
+barras.forEach(b=>b.classList.remove("ativa"));
 
+slides[atual].classList.add("ativo");
+barras[atual].classList.add("ativa");
 
-// TENTA INICIAR A MÚSICA AUTOMATICAMENTE
-document.addEventListener("click", () => {
-const audio = document.getElementById("musica");
-audio.play();
-},{ once:true });
+}
 
+function proximo(){
+if(atual<slides.length-1){
+atual++;
+atualizar();
+}
+}
 
-// ELEMENTOS FLUTUANTES
+function anterior(){
+if(atual>0){
+atual--;
+atualizar();
+}
+}
+
+document.addEventListener("click",()=>{
+document.getElementById("musica").play();
+},{once:true});
+
 function criarElemento(){
 
-const simbolos = [
-"🖤",
-"🥀",
-"🌹"
-];
+const itens=["🖤","🥀","🌹"];
 
-const el = document.createElement("div");
+const el=document.createElement("div");
 
-el.className = "flutuante";
+el.className="flutuante";
 
-el.innerHTML =
-simbolos[Math.floor(Math.random()*simbolos.length)];
+el.innerHTML=
+itens[Math.floor(Math.random()*itens.length)];
 
-el.style.left =
-Math.random()*100 + "vw";
+el.style.left=Math.random()*100+"vw";
 
-el.style.fontSize =
-(20 + Math.random()*20) + "px";
+el.style.fontSize=
+(18+Math.random()*18)+"px";
 
-el.style.animationDuration =
-(5 + Math.random()*5) + "s";
+el.style.animationDuration=
+(6+Math.random()*4)+"s";
 
 document.body.appendChild(el);
 
@@ -221,7 +279,7 @@ el.remove();
 
 }
 
-setInterval(criarElemento,700);
+setInterval(criarElemento,1200);
 
 </script>
 
